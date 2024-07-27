@@ -1,0 +1,17 @@
+total_cost = 0
+ticket_count = int(input("Введите количество билетов, которые Вы хотите приобрести: "))
+
+for i in range(ticket_count):
+    age = int(input(f"Введите возраст посетителя {i+1}: "))
+    if age < 18:
+        ticket_price = 0
+    elif 18 <= age < 25:
+        ticket_price = 990
+    else:
+        ticket_price = 1390
+    total_cost += ticket_price
+
+if ticket_count > 3:
+    total_cost *= 0.9
+
+print(f"Общая стоимость билетов: {total_cost:.2f} руб.")
